@@ -1,4 +1,4 @@
-name: Deploy Medusa to-EC2
+name: Deploy Medusa to-EC2-final-test
 
 on:
   push:
@@ -27,6 +27,9 @@ jobs:
           
           # Pull the latest code
           git pull origin main &&
+
+          # Step 3: Install PM2 globally if it's not already installed
+          sudo npm install pm2@latest -g &&
           
           # Reinstall dependencies if needed
           npm install &&
